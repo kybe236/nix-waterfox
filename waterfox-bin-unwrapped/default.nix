@@ -19,7 +19,7 @@
 }:
 let
   pname = "waterfox-bin-unwrapped";
-  version = "6.6.11";
+  version = "6.6.12";
 
   binaryName = "waterfox";
   mozillaPlatforms = {
@@ -38,13 +38,13 @@ stdenv.mkDerivation {
     if stdenv.hostPlatform.isLinux then
       fetchurl {
         url = "https://cdn.waterfox.com/waterfox/releases/${version}/${arch}/waterfox-${version}.tar.bz2";
-        hash = "sha256-qtcEltFWJlzNVRYxLYfqQrCk2YQF0diUGEunfAVCUWo=";
+        hash = "sha256-4mEVeqGiNzO5au4LsOMc5i6UaQ/AxV9XH1ea7HAd+kU=";
       }
     else
       fetchurl {
         url = "https://cdn.waterfox.com/waterfox/releases/${version}/${arch}/Waterfox%20${version}.dmg";
         name = "waterfox-${version}.dmg";
-        hash = "sha256-P2VHc0BOP+QEBb6zRiXNNVALJEOT47ro4iLCh3RNG+o=";
+        hash = "sha256-sXl2MB8V/1xPm0Io4TwHjUljWG0rmCzRmI7kpp9br44=";
       };
 
   sourceRoot = lib.optional stdenv.hostPlatform.isDarwin ".";
